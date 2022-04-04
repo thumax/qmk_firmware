@@ -43,12 +43,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [1] = LAYOUT(
-        KC_F13,   KC_F15, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_INS,           RESET,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_DEL,           _______,
-        _______, _______,  KC_F14, _______, _______, _______, _______, KC_PGUP, KC_UP,   KC_PGDN, KC_PSCR, KC_SLCK, KC_PAUS, _______,          _______,
-        _______, KC_MPRV, KC_MPLY, KC_MNXT, _______, _______, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_INS,  KC_DEL,           _______,          _______,
-        _______,          _______, _______, _______, _______, _______, KC_END,  _______, _______, RGB_VAI, RGB_TOG,          RGB_MOD, KC_F14,  _______,
-        _______, KC_APP,  _______,                            _______,                            RGB_VAD, _______, RGB_RMOD,KC_MPRV, KC_MPLY, KC_MNXT
+        _______, KC_F13,  KC_F14,  KC_F15,  KC_F16,  KC_F17,  KC_F18,  KC_F19,  KC_F20,  KC_F21,  KC_F22,  KC_F23,  KC_F23,  KC_INS,           RESET,
+        _______, KC_P1,   KC_P2,   KC_P3,   KC_P4,   KC_P5,   KC_P6,   KC_P7,   KC_P8,   KC_P9,   KC_P0,   KC_PMNS, KC_PPLS, KC_DEL,           KC_NUM,
+        _______, KC_VOLD, KC_MUTE, KC_VOLU, _______, _______, _______, KC_PGUP, KC_UP,   KC_PGDN, KC_PSCR, KC_SLCK, KC_PAUS, KC_CAPS,          KC_PSLS,
+        _______, KC_MPRV, KC_MPLY, KC_MNXT, _______, _______, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_INS,  KC_DEL,           _______,          KC_PAST,
+        _______,          _______, _______, _______, _______, _______, KC_END,  _______, _______, RGB_VAI, RGB_TOG,          RGB_MOD, KC_F14,  KC_PDOT,
+        _______, KC_APP,  _______,                            KC_LCTL,                            RGB_VAD, _______, RGB_RMOD,KC_MPRV, KC_MPLY, KC_MNXT
     ),
 
     [2] = LAYOUT(
