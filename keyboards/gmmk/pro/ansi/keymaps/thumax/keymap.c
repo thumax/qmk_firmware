@@ -51,7 +51,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
         } else {
             rgblight_decrease_hue_noeeprom();
         }
-    } else if (IS_LAYER_ON(META)) {
+    } else if (get_highest_layer(layer_state|default_layer_state) == META) {
         if (clockwise) {
             tap_code16(KC_MNXT);
         } else {
