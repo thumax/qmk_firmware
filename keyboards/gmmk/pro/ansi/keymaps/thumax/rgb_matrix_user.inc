@@ -3,13 +3,13 @@
 // Step 1.
 // Declare custom effects using the RGB_MATRIX_EFFECT macro
 // (note the lack of semicolon after the macro!)
-RGB_MATRIX_EFFECT(zeibaleiste)
+RGB_MATRIX_EFFECT(RGB_THUMAX_MIAMI_SIDES)
 
 // Step 2.
 // Define effects inside the `RGB_MATRIX_CUSTOM_EFFECT_IMPLS` ifdef block
 #ifdef RGB_MATRIX_CUSTOM_EFFECT_IMPLS
 
-static bool zeibaleiste(effect_params_t* params) {
+static bool RGB_THUMAX_MIAMI_SIDES(effect_params_t* params) {
     RGB_MATRIX_USE_LIMITS(led_min, led_max);
     for (uint8_t i = led_min; i < led_max; i++) {
         rgb_matrix_set_color(i, RGB_OFF);
@@ -36,3 +36,20 @@ static bool zeibaleiste(effect_params_t* params) {
 }
 
 #endif // RGB_MATRIX_CUSTOM_EFFECT_IMPLS
+
+// led number, function of the key
+//  0, ESC    6, F1     12, F2     18, F3     23, F4     28, F5     34, F6     39, F7     44, F8     50, F9     56, F10    61, F11    66, F12    69, Prt     Rotary(Mute)
+//  1, ~      7, 1      13, 2      19, 3      24, 4      29, 5      35, 6      40, 7      45, 8      51, 9      57, 0      62, -_     78, (=+)   85, BackSpc 72, Del
+//  2, Tab    8, Q      14, W      20. E      25, R      30, T      36, Y      41, U      46, I      52, O      58, P      63, [{     89, ]}     93, \|      75, PgUp
+//  3, Caps   9, A      15, S      21, D      26, F      31, G      37, H      42, J      47, K      53, L      59, ;:     64, '"                96, Enter   86, PgDn
+//  4, Sh_L   10, Z     16, X      22, C      27, V      32, B      38, N      43, M      48, ,<     54, .<     60, /?                90, Sh_R   94, Up      82, End
+//  5, Ct_L   11,Win_L  17, Alt_L                        33, SPACE                        49, Alt_R  55, FN                65, Ct_R   95, Left   97, Down    79, Right
+//
+// 67, Side01 68, Side12
+// 70, Side02 71, Side13
+// 73, Side03 74, Side14
+// 76, Side04 77, Side15
+// 80, Side05 81, Side16
+// 83, Side06 84, Side17
+// 87, Side07 88, Side18
+// 91, Side08 92, Side19
