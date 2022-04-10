@@ -36,8 +36,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [UTIL] = LAYOUT(
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX,
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX,
-        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          RESET,            XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          RGB_SAI,
+        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          RESET,            RGB_SAD,
         XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX, RGB_VAI, RGB_TOG,
         XXXXXXX, XXXXXXX, XXXXXXX,                            XXXXXXX,                            _______, _______, XXXXXXX, RGB_RMOD,RGB_VAD, RGB_MOD
     ),
@@ -45,26 +45,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (get_mods() & MOD_BIT(KC_LCTRL)) {
+    if (get_highest_layer(layer_state|default_layer_state) == 2) {
         if (clockwise) {
-            tap_code(KC_RGHT);
+            rgblight_increase_hue_noeeprom();
         } else {
-            tap_code(KC_LEFT);
-        }
-    } else if (get_mods() & MOD_BIT(KC_LALT)) {
-        if (clockwise) {
-            tap_code(KC_TAB);
-        } else {
-            tap_code16(S(KC_TAB));
+            rgblight_decrease_hue_noeeprom();
         }
     } else {
-        if (clockwise) {
-            tap_code(KC_VOLU);
+        if (get_mods() & MOD_BIT(KC_LCTRL)) {
+            if (clockwise) {
+                tap_code16(KC_RGHT);
+            } else {
+                tap_code16(KC_LEFT);
+            }
+        } else if (get_mods() & MOD_BIT(KC_LALT)) {
+            if (clockwise) {
+                tap_code16(KC_TAB);
+            } else {
+                tap_code16(S(KC_TAB));
+            }
         } else {
-            tap_code(KC_VOLD);
+            if (clockwise) {
+                tap_code16(KC_VOLU);
+            } else {
+                tap_code16(KC_VOLD);
+            }
         }
     }
-    return true;
+    return false;
 };
 
 // led number, function of the key
