@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          RGB_SAI,
         _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          RESET,            RGB_SAD,
         XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          XXXXXXX, RGB_VAI, RGB_TOG,
-        XXXXXXX, XXXXXXX, XXXXXXX,                            XXXXXXX,                            _______, _______, XXXXXXX, RGB_RMOD,RGB_VAD, RGB_MOD
+        XXXXXXX, XXXXXXX, XXXXXXX,                            KC_PWR,                             _______, _______, XXXXXXX, RGB_RMOD,RGB_VAD, RGB_MOD
     ),
 };
 
