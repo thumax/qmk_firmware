@@ -3,11 +3,11 @@
 #include "config_common.h"
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID       0x445A  // "DZ"
-#define PRODUCT_ID      0x2260
+#define VENDOR_ID       0x0744  // GMK
+#define PRODUCT_ID      0x0000  // Stealth
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    KBDFans
-#define PRODUCT         DZ60
+#define MANUFACTURER    GMK
+#define PRODUCT         Stealth
 
 /* key matrix size */
 #define MATRIX_ROWS 5
