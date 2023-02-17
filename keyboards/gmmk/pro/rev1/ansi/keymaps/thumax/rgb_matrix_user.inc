@@ -4,6 +4,7 @@
 // Declare custom effects using the RGB_MATRIX_EFFECT macro
 // (note the lack of semicolon after the macro!)
 RGB_MATRIX_EFFECT(RGB_THUMAX_MIAMI_SIDES)
+RGB_MATRIX_EFFECT(RGB_THUMAX_AWAKEN_SIDES)
 
 // Step 2.
 // Define effects inside the `RGB_MATRIX_CUSTOM_EFFECT_IMPLS` ifdef block
@@ -34,6 +35,33 @@ static bool RGB_THUMAX_MIAMI_SIDES(effect_params_t* params) {
     rgb_matrix_set_color(92, 0, 255, 255);
     return led_max < DRIVER_LED_TOTAL;
 }
+
+static bool RGB_THUMAX_AWAKEN_SIDES(effect_params_t* params) {
+    RGB_MATRIX_USE_LIMITS(led_min, led_max);
+    for (uint8_t i = led_min; i < led_max; i++) {
+        rgb_matrix_set_color(i, RGB_OFF);
+    }
+    // set left sidebar
+    rgb_matrix_set_color(67, 244, 54, 76);
+    rgb_matrix_set_color(70, 208, 108, 200);
+    rgb_matrix_set_color(73, 158, 140, 231);
+    rgb_matrix_set_color(76, 108, 163, 235);
+    rgb_matrix_set_color(80, 0, 191, 224);
+    rgb_matrix_set_color(83, 68, 210, 174);
+    rgb_matrix_set_color(87, 127, 216, 133);
+    rgb_matrix_set_color(91, 253, 207, 73);
+    // set right sidebar
+    rgb_matrix_set_color(68, 244, 54, 76);
+    rgb_matrix_set_color(71, 208, 108, 200);
+    rgb_matrix_set_color(74, 158, 140, 231);
+    rgb_matrix_set_color(77, 108, 163, 235);
+    rgb_matrix_set_color(81, 0, 191, 224);
+    rgb_matrix_set_color(84, 68, 210, 174);
+    rgb_matrix_set_color(88, 127, 216, 133);
+    rgb_matrix_set_color(92, 253, 207, 73);
+    return led_max < DRIVER_LED_TOTAL;
+}
+
 
 #endif // RGB_MATRIX_CUSTOM_EFFECT_IMPLS
 
