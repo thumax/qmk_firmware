@@ -1,13 +1,11 @@
 #pragma once
 
-#include "config_common.h"
-
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0x0744  // GMK
 #define PRODUCT_ID      0x0000  // Stealth
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    GMK
-#define PRODUCT         Stealth
+#define MANUFACTURER    "GMK"
+#define PRODUCT         "Stealth"
 
 /* key matrix size */
 #define MATRIX_ROWS 5
@@ -29,21 +27,6 @@
 
 /* COL2ROW, ROW2COL*/
 #define DIODE_DIRECTION COL2ROW
-
-#define LED_CAPS_LOCK_PIN B2
-#define LED_PIN_ON_STATE 0
-
-#define BACKLIGHT_PIN B6
-#define BACKLIGHT_LEVELS 5
-
-#define RGB_DI_PIN E2
-#ifdef RGB_DI_PIN
-#    define RGBLIGHT_ANIMATIONS
-#    define RGBLED_NUM 16
-#    define RGBLIGHT_HUE_STEP 8
-#    define RGBLIGHT_SAT_STEP 8
-#    define RGBLIGHT_VAL_STEP 8
-#    define RGBLIGHT_SLEEP
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
