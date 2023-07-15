@@ -27,7 +27,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [META] = LAYOUT(
         XXXXXXX, KC_F13,  KC_F14,  KC_F15,  KC_F16,  KC_F17,  KC_F18,  KC_F19,  KC_F20,  KC_F21,  KC_F22,  KC_F23,  KC_F24,  KC_INS,           KC_MPLY,
         XXXXXXX, KC_P1,   KC_P2,   KC_P3,   KC_P4,   KC_P5,   KC_P6,   KC_P7,   KC_P8,   KC_P9,   KC_P0,   KC_PMNS, KC_PPLS, KC_DEL,           KC_NUM,
-        XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX, XXXXXXX, KC_PGUP, KC_UP,   KC_PGDN, KC_PSCR, KC_SLCK, KC_PAUS, KC_CAPS,          KC_PSLS,
+        XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX, XXXXXXX, KC_PGUP, KC_UP,   KC_PGDN, KC_PSCR, KC_SCRL, KC_PAUS, KC_CAPS,          KC_PSLS,
         _______, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_INS,  KC_DEL,           KC_KP_ENTER,      KC_PAST,
         _______,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_END,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          KC_P5,   KC_P8,   KC_PDOT,
         _______, KC_APP,  _______,                            KC_LCTL,                            MO(UTIL),_______, _______, KC_P4,   KC_P2,   KC_P6
@@ -58,7 +58,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
             tap_code16(KC_MPRV);
         }
     } else {
-        if (get_mods() & MOD_BIT(KC_LCTRL)) {
+        if (get_mods() & MOD_BIT(KC_LCTL)) {
             if (clockwise) {
                 tap_code16(KC_RGHT);
             } else {
@@ -98,11 +98,12 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 // 87, Side07 88, Side18
 // 91, Side08 92, Side19
 
-void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     // capslock warning
-    if (IS_HOST_LED_ON(USB_LED_CAPS_LOCK)) {
+    if (host_keyboard_led_state().caps_lock) {
         RGB_MATRIX_INDICATOR_SET_COLOR(3, 255, 0, 0);
     }
+    return false;
 };
 
 // turn off LEDs on USB suspend event

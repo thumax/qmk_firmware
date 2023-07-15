@@ -33,7 +33,7 @@ static bool RGB_THUMAX_MIAMI_SIDES(effect_params_t* params) {
     rgb_matrix_set_color(84, 0, 109, 255);
     rgb_matrix_set_color(88, 0, 182, 255);
     rgb_matrix_set_color(92, 0, 255, 255);
-    return led_max < DRIVER_LED_TOTAL;
+    return rgb_matrix_check_finished_leds(led_max);
 }
 
 static bool RGB_THUMAX_AWAKEN_SIDES(effect_params_t* params) {
@@ -59,7 +59,7 @@ static bool RGB_THUMAX_AWAKEN_SIDES(effect_params_t* params) {
     rgb_matrix_set_color(84, 68, 210, 174);
     rgb_matrix_set_color(88, 127, 216, 133);
     rgb_matrix_set_color(92, 253, 207, 73);
-    return led_max < DRIVER_LED_TOTAL;
+    return rgb_matrix_check_finished_leds(led_max);
 }
 
 

@@ -20,3 +20,10 @@
 #define DRIVER_1_LED_TOTAL 66
 #define DRIVER_2_LED_TOTAL 32
 #define RGB_MATRIX_LED_COUNT (DRIVER_1_LED_TOTAL + DRIVER_2_LED_TOTAL)
+
+/* USB Device descriptor parameter */
+#define VENDOR_ID       0x0B98
+#define PRODUCT_ID      0x4A55
+#define DEVICE_VER      0x0001
+#define MANUFACTURER    "Playmates Toys Inc."
+#define PRODUCT         "Anal Annihilator"
